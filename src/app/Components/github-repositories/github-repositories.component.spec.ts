@@ -1,0 +1,23 @@
+import { ComponentFixture, TestBed } from '@angular/core/testing';
+
+import { GithubRepositoriesComponent } from './github-repositories.component';
+
+describe('GithubRepositoriesComponent', () => {
+  let component: GithubRepositoriesComponent;
+  let fixture: ComponentFixture<GithubRepositoriesComponent>;
+
+  beforeEach(async () => {
+    await TestBed.configureTestingModule({
+      declarations: [ GithubRepositoriesComponent ]
+    })
+    .compileComponents();
+
+    fixture = TestBed.createComponent(GithubRepositoriesComponent);
+    component = fixture.componentInstance;
+    fixture.detectChanges();
+  });
+
+  it('should create', () => {
+    expect(component).toBeTruthy();
+  });
+});
