@@ -1,8 +1,10 @@
-<p>github-repositories works!</p>
-<!-- <div>{{githubRepositories.}}</div> -->
-<div *ngFor="let repo of githubRepositories">
-    <div>
-        {{repo.name}}
-        hello
-    </div>
-</div>
+          <div class="grid grid-cols-2 gap-4">
+            <div *ngFor="let repo of githubRepositories" class="max-w-sm min-w-full p-6 bg-gradient-to-r from-slate-900 to-slate-700 border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
+                <h5 class="mb-2 text-2xl font-bold tracking-tight text-white">{{repo.name}}</h5>
+                <p class="font-normal text-white">{{repo.description}}</p>
+                <div *ngIf="repo.language">
+                    <p class="bg-blue-500 text-white p-2 rounded inline-block mt-1">{{repo.language}}</p>
+                </div>
+            </div>
+        </div>
+        

@@ -19,8 +19,11 @@ export class ApiService {
     );    
   }
   
-  getRepositories(githubUsername:string){
-    const dataURL= `https://api.github.com/users/${githubUsername}/repos`;
+  getRepositories(githubUsername:string, page:number){
+    // const dataURL= `https://api.github.com/users/${githubUsername}/repos`;
+
+    const dataURL= `https://api.github.com/users/${githubUsername}/repos?page=${page}&per_page=10`;
+    
     return this.httpClient.get<any>(dataURL).pipe(
       retry(1),
       catchError(this.handleErrors)

@@ -8,7 +8,7 @@ import { Component, Input } from '@angular/core';
 export class GithubRepositoriesComponent {
   @Input() githubRepositories !: any;
   ngOnInit(){
-    throw new Error('Method not implemented.');
+    // throw new Error('Method not implemented.');
 
   }
 }

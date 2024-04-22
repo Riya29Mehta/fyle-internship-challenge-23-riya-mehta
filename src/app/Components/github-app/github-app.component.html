@@ -1,5 +1,9 @@
-<div>
-    <div class="mt-2 flex flex-col w-100 items-center pt-4 gap-4 mb-3">
+<div class="bg-gradient-to-r from-teal-400 to-yellow-200">
+<div class="flex flex-col md:flex-row">
+    <div class="flex flex-col w-full md:w-1/2">
+        <app-github-profile [githubProfile]="githubProfile"></app-github-profile>
+    </div>
+    <div class="mt-2 flex flex-col w-full md:w-1/2 items-center pt-4 gap-4 mb-3">
         <p class="text-xl md:text-2xl font-extrabold text-black">GitExplore: Find GitHub Repositories</p>
         <form action="" class="max-w-[480px] w-full px-4" (ngSubmit)="searchUser()">
             <div class="relative">
@@ -16,8 +20,31 @@
                 </button>
             </div>
         </form>
-
     </div>
-    <app-github-profile [githubProfile]="githubProfile" [githubRepositories]="githubRepositories"></app-github-profile>
-    <!-- <app-github-repositories [githubRepositories]="githubRepositories"></app-github-repositories> -->
+</div>
+
+<div *ngIf="githubRepositories" class="flex justify-center items-center w-full">
+   
+        <app-github-repositories [githubRepositories]="githubRepositories"></app-github-repositories>
+
+</div>
+
+<nav *ngIf="githubRepositories">
+    <div class="flex flex-row w-full pt-4 gap-4 items-center justify-center mb-4">
+        <button (click)="prevPage()" [disabled]="currentPage === 1"
+                class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded disabled:bg-gray-400"
+        >
+            Previous
+        </button>
+        <div class="text-center">
+            Page {{currentPage}} 
+        </div>
+        <button (click)="nextPage()" [disabled]="!reposAvailable" 
+                class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded disabled:bg-gray-400"
+        >
+            Next
+        </button>
+    </div>
+</nav>
+
 </div>

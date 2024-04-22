@@ -7,10 +7,9 @@ import { Component, Input } from '@angular/core';
 })
 export class GithubProfileComponent {
   @Input() githubProfile:any;
-  @Input() githubRepositories:any;
   constructor() { }
 
   ngOnInit(): void {
-    throw new Error('Method not implemented.');
+    // throw new Error('Method not implemented.');
   }
 }

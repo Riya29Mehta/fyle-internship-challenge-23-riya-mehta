@@ -1,7 +1,7 @@
 
-<div *ngIf="githubProfile">
+<div *ngIf="githubProfile" class="ml-3 mr-3">
     <div>
-      <div>
+      <div *ngIf="githubProfile">
         <app-github-profile-card [githubProfile]="githubProfile"></app-github-profile-card>
       </div>
   
